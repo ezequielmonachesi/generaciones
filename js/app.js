@@ -1,14 +1,12 @@
 class Persona{
     #nombre
     #edad
-    #dni
     #sexo
     #peso
     #altura
-    constructor(nombre, edad, dni, sexo, peso, altura){
+    constructor(nombre, edad, sexo, peso, altura){
         this.#nombre=nombre;
         this.#edad=edad;
-        this.#dni=dni;
         this.#sexo=sexo;
         this.#peso=peso;
         this.#altura=altura;
@@ -24,12 +22,6 @@ class Persona{
     }
     set edad(nuevaEdad){
         this.#edad=nuevaEdad;
-    }
-    get dni(){
-        return this.#dni;
-    }
-    set dni (nuevoDni){
-        this.#dni=nuevoDni;
     }
     get sexo(){
         return this.#sexo;
@@ -52,26 +44,52 @@ class Persona{
 
     mostrarGeneracion(){
         if(2023-this.#edad >= 1994 && 2023-this.#edad <= 2010){
-        document.write(`${this.#nombre} pertenece a la Generación Z. Rasgo característico: Irreverancia <br>`)
+        alert(`${this.#nombre} pertenece a la Generación Z. Rasgo característico: Irreverancia `)
         }else if (2023-this.#edad >= 1981 && 2023-this.#edad <= 1993){
-            document.write(`${this.#nombre} pertenece a la Generación Y. Rasgo característico:  Frustración <br>`)
+            alert(`${this.#nombre} pertenece a la Generación Y. Rasgo característico:  Frustración `)
         }else if (2023-this.#edad >= 1969 && 2023-this.#edad <= 1980){
-            document.write(`${this.#nombre} pertenece a la Generación X. Rasgo característico: Obsesión por el éxito<br>`)
+            alert(`${this.#nombre} pertenece a la Generación X. Rasgo característico: Obsesión por el éxito`)
         }else if (2023-this.#edad >= 1949 && 2023-this.#edad <= 1968){
-            document.write(`${this.#nombre} pertenece a la Generación Baby Boom. Rasgo característico: Ambición <br>`)
+            alert(`${this.#nombre} pertenece a la Generación Baby Boom. Rasgo característico: Ambición `)
         }else{
-            document.write(`${this.#nombre} pertenece a la Generación Silent Generation. Rasgo característico: Austeridad <br>`)
+            alert(`${this.#nombre} pertenece a la Generación Silent Generation. Rasgo característico: Austeridad `)
         }
     }
     
     esMayorDeEdad(){
-        this.#edad >= 18 ? document.write(`${this.#nombre} es mayor de edad <br>`): document.write(`${this.#nombre} es menor de edad <br>`)
+        this.#edad >= 18 ? alert(`${this.#nombre} es mayor de edad `): alert(`${this.#nombre} es menor de edad `)
     }
     mostrarDatos(){
-        document.write(`Nombre: ${this.#nombre}, Años: ${this.#edad}, DNI: ${this.#dni}, Sexo: ${this.#sexo}, Peso: ${this.#peso}Kg, Altura: ${this.#altura}cm <br>`)
+        alert(`Nombre: ${this.#nombre}, Años: ${this.#edad}, Sexo: ${this.#sexo}, Peso: ${this.#peso}Kg, Altura: ${this.#altura}cm`)
     }
 }
 
+
+let nombre = document.querySelector('#nombre');
+let edad = document.querySelector('#edad');
+let sexoM = document.querySelector('#masculino');
+let sexoF = document.querySelector('#femenino');
+let peso = document.querySelector('#peso');
+let altura = document.querySelector('#altura');
+let crearPersona = document.querySelector('#crearPersona');
+let persona
+let mostrarDatos = document.querySelector('#mostrarDatos');
+let mostrarGeneracion = document.querySelector('#mostrarGeneracion');
+let mayorDeEdad = document.querySelector('#mayorDeEdad');
+
+crearPersona.addEventListener('click', ()=>{
+    persona = new Persona(nombre.value, edad.value, sexo.value, peso.value, altura.value);
+})
+
+mostrarDatos.addEventListener('click', ()=>{
+    persona.mostrarDatos()
+})
+mostrarGeneracion.addEventListener('click', ()=>{
+    persona.mostrarGeneracion()
+})
+mayorDeEdad.addEventListener('click', ()=>{
+    persona.esMayorDeEdad()
+})
 
         
 // let random = Math.floor(Math.random() * 3) + 1;

@@ -14,134 +14,107 @@
   <body>
     <header>
       <nav class="navbar navbar-expand-lg bg-dark navbar-dark">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="#">Navbar</a>
-          <button
-            class="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Home</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Link</a>
-              </li>
-              <li class="nav-item dropdown">
-                <a
-                  class="nav-link dropdown-toggle"
-                  href="#"
-                  role="button"
-                  data-bs-toggle="dropdown"
-                  aria-expanded="false"
-                >
-                  Dropdown
-                </a>
-                <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="#">Action</a></li>
-                  <li><a class="dropdown-item" href="#">Another action</a></li>
-                  <li><hr class="dropdown-divider" /></li>
-                  <li>
-                    <a class="dropdown-item" href="#">Something else here</a>
-                  </li>
-                </ul>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link disabled">Disabled</a>
-              </li>
-            </ul>
-            <form class="d-flex" role="search">
-              <input
-                class="form-control me-2"
-                type="search"
-                placeholder="Search"
-                aria-label="Search"
-              />
-              <button class="btn btn-outline-success" type="submit">
-                Search
-              </button>
-            </form>
+        <div class="container">
+          <a class="navbar-brand text-danger fw-bold" href="index.html">Persona</a>
           </div>
         </div>
       </nav>
     </header>
     <main class="fondo">
-      <section class="container">
-        <aside class="mb-3">
-          <label for="nombre" class="form-label">Nombre</label>
-          <input
-            type="text"
-            class="form-control"
-            id="nombre"
-            placeholder="Nombre"
-          />
-        </aside>
-        <aside class="mb-3">
-          <label for="edad" class="form-label">Edad</label>
-          <input
-            type="number"
-            class="form-control"
-            id="edad"
-            placeholder="Edad"
-          />
-        </aside>
-        <aside class="mb-3">
-          <label for="edad" class="form-label"
-            >Sexo (H para hombre, F para femenino)</label
-          >
-          <input
-            type="text"
-            class="form-control"
-            id="sexo"
-            placeholder="sexo"
-            minlength="1"
-            maxlength="1"
-          />
-        </aside>
-        <aside class="mb-3">
-          <label for="peso" class="form-label">Peso</label>
-          <input
-            type="text"
-            class="form-control"
-            id="peso"
-            placeholder="Peso"
-          />
-        </aside>
-        <aside class="mb-3">
-          <label for="edad" class="form-label">Altura (en centimetros)</label>
-          <input
-            type="number"
-            class="form-control"
-            id="altura"
-            placeholder="altura"
-          />
-        </aside>
-        <article class="d-flex flex-wrap flex-lg-nowrap  justify-content-between ">
-            <aside>
-                <button type="submit" class="btn btn-danger" id="crearPersona">
-                  Crear persona
-                </button>
-            </aside>
-            <aside class="d-flex justify-content-evenly">
-                <button type="submit" class="btn btn-danger mx-2 mt-3 mt-md-0" id="mostrarGeneracion">
-                  Mostrar Generación
-                </button>
-                <button type="submit" class="btn btn-danger mx-2 mt-3 mt-md-0" id="mostrarDatos">
-                  Mostrar Datos
-                </button>
-                <button type="submit" class="btn btn-danger mx-2 mt-3 mt-md-0" id="mayorDeEdad">
-                  Mayor de edad
-                </button>
-            </aside>
-        </article>
+      <section class="container text-white py-5">
+        <div class="row justify-content-evenly">
+          <div class="col-md-6"></div>
+          <div class="col-md-6">
+            <h2 class="text-center text-lg-start">Crea una Persona</h2>
+            <form class="row justify-content-start">
+              <aside class="col-md-5 mb-3">
+                <label for="nombre" class="form-label">Nombre</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="nombre"
+                  placeholder="Nombre"
+                />
+              </aside>
+              <aside class="col-md-5 mb-3">
+                <label for="edad" class="form-label">Edad</label>
+                <input
+                  type="number"
+                  class="form-control"
+                  id="edad"
+                  placeholder="Edad"
+                />
+              </aside>
+              <aside class="col-md-5 mb-3">
+                <label for="edad" class="form-label">Sexo (H o F)</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="sexo"
+                  placeholder="sexo"
+                  minlength="1"
+                  maxlength="1"
+                />
+              </aside>
+              <aside class="col-md-5 mb-3">
+                <label for="peso" class="form-label">Peso</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="peso"
+                  placeholder="Peso"
+                />
+              </aside>
+              <aside class="col-md-5 mb-3">
+                <label for="edad" class="form-label"
+                  >Altura (en centimetros)</label
+                >
+                <input
+                  type="number"
+                  class="form-control"
+                  id="altura"
+                  placeholder="altura"
+                />
+              </aside>
+              <article
+                class="col-md-12 flex-column d-flex flex-wrap flex-lg-nowrap justify-content-start"
+              >
+                <aside class="text-start">
+                  <button
+                    type="submit"
+                    class="btn btn-danger crearPersona"
+                    id="crearPersona"
+                  >
+                    Crear persona
+                  </button>
+                </aside>
+                <aside class="d-flex justify-content-start mt-5">
+                  <button
+                    type="submit"
+                    class="btn btn-danger me-2 mt-3 mt-md-0"
+                    id="mostrarGeneracion"
+                  >
+                    Mostrar Generación
+                  </button>
+                  <button
+                    type="submit"
+                    class="btn btn-danger mx-2 mt-3 mt-md-0"
+                    id="mostrarDatos"
+                  >
+                    Mostrar Datos
+                  </button>
+                  <button
+                    type="submit"
+                    class="btn btn-danger mx-2 mt-3 mt-md-0"
+                    id="mayorDeEdad"
+                  >
+                    Mayor de edad
+                  </button>
+                </aside>
+              </article>
+            </form>
+          </div>
+        </div>
       </section>
     </main>
     <footer class="bg-dark text-secondary py-4">

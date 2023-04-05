@@ -64,7 +64,6 @@ class Persona{
     }
 }
 
-
 let nombre = document.querySelector('#nombre');
 let edad = document.querySelector('#edad');
 let sexo = document.querySelector('#sexo');
@@ -77,7 +76,6 @@ let mayorDeEdad = document.querySelector('#mayorDeEdad');
 let personaCreada = document.querySelector('#personaCreada');
 
 form.addEventListener('submit', crearPersona)
-
 mostrarDatos.addEventListener('click', ()=>{
     persona.mostrarDatos()
 })

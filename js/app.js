@@ -60,26 +60,23 @@ class Persona{
         this.#edad >= 18 ? alert(`${this.#nombre} es mayor de edad `): alert(`${this.#nombre} es menor de edad `)
     }
     mostrarDatos(){
-        alert(`Nombre: ${this.#nombre}, Años: ${this.#edad}, Sexo: ${this.#sexo}, Peso: ${this.#peso}Kg, Altura: ${this.#altura}cm`)
+        alert(`Nombre: ${this.#nombre}\nEdad: ${this.#edad}\nSexo: ${this.#sexo}\nPeso: ${this.#peso} Kg\nAltura: ${this.#altura} cm`)
     }
 }
 
 
 let nombre = document.querySelector('#nombre');
 let edad = document.querySelector('#edad');
-let sexoM = document.querySelector('#masculino');
-let sexoF = document.querySelector('#femenino');
-let peso = document.querySelector('#peso');
+let sexo = document.querySelector('#sexo');
 let altura = document.querySelector('#altura');
-let crearPersona = document.querySelector('#crearPersona');
+let form = document.querySelector('form');
 let persona
 let mostrarDatos = document.querySelector('#mostrarDatos');
 let mostrarGeneracion = document.querySelector('#mostrarGeneracion');
 let mayorDeEdad = document.querySelector('#mayorDeEdad');
+let personaCreada = document.querySelector('#personaCreada');
 
-crearPersona.addEventListener('click', ()=>{
-    persona = new Persona(nombre.value, edad.value, sexo.value, peso.value, altura.value);
-})
+form.addEventListener('submit', crearPersona)
 
 mostrarDatos.addEventListener('click', ()=>{
     persona.mostrarDatos()
@@ -90,19 +87,13 @@ mostrarGeneracion.addEventListener('click', ()=>{
 mayorDeEdad.addEventListener('click', ()=>{
     persona.esMayorDeEdad()
 })
-
-        
-// let random = Math.floor(Math.random() * 3) + 1;
-/* 
-let juan = new Persona('Juan', 25, 36368963, 'M', 80, 180)
-let jose = new Persona('Jose', 90, 567890, 'M', 50, 160)
-let damian = new Persona('Damian', 50, 17654987, 'M', 70, 155)
-let emilse = new Persona('Emilse', 10, 40678234, 'F', 30, 120)
-
-document.write(`Dni de ${juan.nombre}: ${juan.dni} <br>`);
-console.log(juan.dni);
-juan.mostrarGeneracion();
-juan.esMayorDeEdad();
-juan.generaDNI();
-console.log(juan.dni);
-document.write(`Nuevo Dni de ${juan.nombre}: ${juan.dni}`) */
+function crearPersona(e){
+    e.preventDefault();
+    persona = new Persona(nombre.value, edad.value, sexo.value, peso.value, altura.value);
+    alert(`Persona creada!`)
+    nombre.value = '';
+    edad.value = '';
+    sexo.value = '';
+    peso.value = '';
+    altura.value = '';
+}

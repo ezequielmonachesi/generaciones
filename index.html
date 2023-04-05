@@ -26,7 +26,7 @@
           <div class="col-md-6"></div>
           <div class="col-md-6">
             <h2 class="text-center text-lg-start">Crea una Persona</h2>
-            <aside class="row justify-content-start">
+            <form class="row justify-content-start">
               <aside class="col-md-5 mb-3">
                 <label for="nombre" class="form-label">Nombre</label>
                 <input
@@ -79,39 +79,38 @@
               <article
                 class="col-md-12 flex-column d-flex flex-wrap flex-lg-nowrap justify-content-start"
               >
-                <aside class="text-start">
+                <aside class="text-start" id="personaCreada">
                   <button
                     type="submit"
-                    class="btn btn-danger crearPersona"
-                    id="crearPersona"
+                    class="btn btn-danger"
                   >
                     Crear persona
                   </button>
                 </aside>
-                <aside class="d-flex justify-content-start mt-5">
-                  <button
-                    type="submit"
-                    class="btn btn-danger me-2 mt-3 mt-md-0"
-                    id="mostrarGeneracion"
-                  >
-                    Mostrar Generación
-                  </button>
-                  <button
-                    type="submit"
-                    class="btn btn-danger mx-2 mt-3 mt-md-0"
-                    id="mostrarDatos"
-                  >
-                    Mostrar Datos
-                  </button>
-                  <button
-                    type="submit"
-                    class="btn btn-danger mx-2 mt-3 mt-md-0"
-                    id="mayorDeEdad"
-                  >
-                    Mayor de edad
-                  </button>
-                </aside>
               </article>
+            </form>
+            <aside class="d-flex justify-content-start mt-5">
+              <button
+                type="submit"
+                class="btn btn-danger me-2 mt-3 mt-md-0"
+                id="mostrarGeneracion"
+              >
+                Mostrar Generación
+              </button>
+              <button
+                type="submit"
+                class="btn btn-danger mx-2 mt-3 mt-md-0"
+                id="mostrarDatos"
+              >
+                Mostrar Datos
+              </button>
+              <button
+                type="submit"
+                class="btn btn-danger mx-2 mt-3 mt-md-0"
+                id="mayorDeEdad"
+              >
+                Mayor de edad
+              </button>
             </aside>
           </div>
         </div>
